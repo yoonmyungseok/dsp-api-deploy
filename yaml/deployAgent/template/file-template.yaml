@@ -1,0 +1,36 @@
+- route-template:
+    id: file-template
+    from:
+      uri: file://input
+      steps:
+        - log: 풀기 전 deploy
+#        - unmarshal:
+#            gzipDeflater: {}
+        - split:
+            method:
+              ref: org.apache.camel.dataformat.tarfile.TarSplitter
+            streaming: true
+#        - process:
+#            ref: fileProcessor
+#        - log: ${headers}
+#        - choice:
+#            when:
+#              - simple: "${header.fileExtension} == 'jar' || ${header.fileExtension} == 'sh'"
+#                steps:
+#                  - to: file://../dsp_if
+#                  - log: success
+#              - simple: ${header.fileExtension} == "yaml"
+#                steps:
+#                  - choice:
+#                      when:
+#                        - simple: "${header.CamelFileName} contains 'template'"
+#                          steps:
+#                            - to: file://../dsp_if/yaml/ifAgent/template
+#                            - log: success
+#                      otherwise:
+#                          steps:
+#                            - to: file://../dsp_if/yaml/ifAgent/route
+#                            - log: success
+        - to: file:../dsp_if
+#        - log: "전송 후 바디: ${body}"
+        - log: "전송 후 헤더: ${headers}"
