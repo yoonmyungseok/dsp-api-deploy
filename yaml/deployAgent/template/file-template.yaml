@@ -3,13 +3,12 @@
     from:
       uri: file://input
       steps:
-        - log: 풀기 전 deploy
 #        - unmarshal:
 #            gzipDeflater: {}
-        - split:
-            method:
-              ref: org.apache.camel.dataformat.tarfile.TarSplitter
-            streaming: true
+#        - split:
+#            method:
+#              ref: org.apache.camel.dataformat.tarfile.TarSplitter
+#            streaming: true
 #        - process:
 #            ref: fileProcessor
 #        - log: ${headers}
@@ -31,6 +30,6 @@
 #                          steps:
 #                            - to: file://../dsp_if/yaml/ifAgent/route
 #                            - log: success
-        - to: file:../dsp_if
+#        - to: file:../dsp_if
 #        - log: "전송 후 바디: ${body}"
         - log: "전송 후 헤더: ${headers}"

@@ -6,19 +6,23 @@
       - name: httpPath
       - name: execPath
     from:
-      uri: jetty:http://{{httpHost}}{{httpPath}}{{execPath}}
+#      uri: jetty:http://{{httpHost}}{{httpPath}}{{execPath}}
 #      uri: jetty:http://localhost:7777{{httpPath}}{{execPath}}
+      uri: jetty:http://{{httpHost}}/file
       steps:
         - log: ${headers}
-        - log: ${header.funcPath}
-        - choice:
-            when:
-              - simple: ${header.funcPath} == "file"
-                steps:
-                  - toD: file://input?fileName=${header.filename}
-              - simple: ${header.funcPath} == "start"
-                steps:
-                  - to: exec:sh?args=deploy.start.sh&workingDir=../dsp_deploy
-              - simple: ${header.funcPath} == "stop"
-                steps:
-                  - to: exec:sh?args=deploy.stop.sh&workingDir=../dsp_deploy
+        - to: file://if?fileName=${header.fileName}
+        - setBody:
+            constant: if
+#        - log: ${header.funcPath}
+#        - choice:
+#            when:
+#              - simple: ${header.funcPath} == "file"
+#                steps:
+#                  - toD: file://input?fileName=${header.filename}
+#              - simple: ${header.funcPath} == "start"
+#                steps:
+#                  - to: exec:sh?args=deploy.start.sh&workingDir=../dsp_deploy
+#              - simple: ${header.funcPath} == "stop"
+#                steps:
+#                  - to: exec:sh?args=deploy.stop.sh&workingDir=../dsp_deploy

@@ -17,3 +17,14 @@ server:
 camel:
   springboot:
     routes-include-pattern: file:yaml/ifAgent/**/*.yaml
+---
+# Logging
+logging:
+  level:
+    root: info
+    org.apache.kafka.clients.consumer.ConsumerConfig: warn
+  logback:
+    rollingpolicy:
+      max-history: 90
+  file:
+    name: logs/mylog.log

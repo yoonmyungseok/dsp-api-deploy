@@ -51,19 +51,24 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-task copyToLib(type: Copy) {
-    into "$buildDir/libs/libs"
-    from configurations.runtimeClasspath.files
-}
-
-jar {
-    archiveClassifier = ''
-    manifest {
-        attributes 'Main-Class': 'go.kr.dsp.api.DspApiApplication'
-        attributes 'Class-Path': configurations.runtimeClasspath.files.collect { 'libs/' + it.getName() }.join(' ')
-    }
-}
-
-bootJar {
-    enabled = false
+//task copyToLib(type: Copy) {
+//    into "$buildDir/libs/libs"
+//    from configurations.runtimeClasspath.files
+//}
+//
+//jar {
+//    archiveClassifier = ''
+//    manifest {
+//        attributes 'Main-Class': 'go.kr.dsp.api.DspApiApplication'
+//        attributes 'Class-Path': configurations.runtimeClasspath.files.collect { 'libs/' + it.getName() }.join(' ')
+//    }
+//}
+//
+//bootJar {
+//    enabled = false
+//}
+bootJar{
+    archivesBaseName = 'agent'
+    archiveFileName = 'agent-1.0.0.jar'
+    archiveVersion = "1.0.0"
 }
