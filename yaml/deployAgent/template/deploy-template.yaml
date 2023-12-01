@@ -7,11 +7,23 @@
       - name: execPath
     from:
 #      uri: jetty:http://{{httpHost}}{{httpPath}}{{execPath}}
-#      uri: jetty:http://localhost:6666{{httpPath}}{{execPath}}
+#      uri: jetty:http://localhost:6666/file
       uri: jetty:http://{{httpHost}}/file
       steps:
         - log: ${headers}
-#        - to: file://deploy?fileName=${header.fileName}
+        - setHeader:
+            name: fileExtension
+            simple: ${header.fileExtension}
+        - setHeader:
+            name: fileName
+            simple: ${header.fileName}
+        - setHeader:
+            name: serviceName
+            simple: ${header.serviceName}
+        - setHeader:
+            name: agentName
+            simple: ${header.agentName}
+        - toD: file://${header.agentName}?fileName=${header.fileName}
 #        - setBody:
 #            constant: deploy
 #        - choice:

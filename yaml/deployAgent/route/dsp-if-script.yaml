@@ -1,0 +1,7 @@
+- templated-route:
+    route-id: dsp-if-script
+    route-template-ref: script-template
+    parameters:
+      - name: filePath
+        value: if
+

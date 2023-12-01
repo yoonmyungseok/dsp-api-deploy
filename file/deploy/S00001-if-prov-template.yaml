@@ -1,0 +1,24 @@
+- route-template:
+    id: if-template
+    parameters:
+#      - name: RequestHost
+      - name: httpHost
+      - name: httpPath
+      - name: execPath
+    from:
+      uri: jetty:http://{{httpHost}}{{httpPath}}{{execPath}}
+#      uri: jetty:http://localhost:7777{{httpPath}}{{execPath}}
+      steps:
+        - log: ${headers}
+        - log: ${header.funcPath}
+        - choice:
+            when:
+              - simple: ${header.funcPath} == "file"
+                steps:
+                  - to: file://input?fileName=${header.filename}
+              - simple: ${header.funcPath} == "start"
+                steps:
+                  - to: exec:sh?args=deploy.start.sh&workingDir=../dsp_deploy
+              - simple: ${header.funcPath} == "stop"
+                steps:
+                  - to: exec:sh?args=deploy.stop.sh&workingDir=../dsp_deploy

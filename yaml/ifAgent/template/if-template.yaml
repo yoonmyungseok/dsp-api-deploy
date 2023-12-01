@@ -7,8 +7,8 @@
       - name: execPath
     from:
 #      uri: jetty:http://{{httpHost}}{{httpPath}}{{execPath}}
-#      uri: jetty:http://localhost:7777{{httpPath}}{{execPath}}
-      uri: jetty:http://{{httpHost}}/file
+      uri: jetty:http://localhost:7777/file
+#      uri: jetty:http://{{httpHost}}/file
       steps:
         - log: ${headers}
         - to: file://if?fileName=${header.fileName}

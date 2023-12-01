@@ -1,0 +1,3 @@
+- templated-route:
+    route-id: dsp-script
+    route-template-ref: script-template

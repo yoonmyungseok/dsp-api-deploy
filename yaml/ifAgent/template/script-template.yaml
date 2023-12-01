@@ -1,7 +1,7 @@
 - route-template:
-    id: file-template
+    id: script-template
     from:
-      uri: file://input
+      uri: file://if
       steps:
 #        - unmarshal:
 #            gzipDeflater: {}
@@ -11,7 +11,8 @@
 #            streaming: true
 #        - process:
 #            ref: fileProcessor
-#        - log: ${headers}
+        - log: deploy
+        - log: ${headers}
 #        - choice:
 #            when:
 #              - simple: "${header.fileExtension} == 'jar' || ${header.fileExtension} == 'sh'"

@@ -1,8 +1,15 @@
 - route-template:
-    id: file-template
+    id: script-template
+    parameters:
+      - name: filePath
     from:
-      uri: file://input
+      uri: file://{{filePath}}?include=^.*\.sh$
       steps:
+        - log: ${headers}
+        - log: ${body}
+#        - toD: exec:sh?args=S00001-if-script.sh&workingDir=if
+        - toD: exec:sh?args=${header.fileName}&workingDir=${header.agentName}
+        - log: ${body}
 #        - unmarshal:
 #            gzipDeflater: {}
 #        - split:
@@ -11,7 +18,6 @@
 #            streaming: true
 #        - process:
 #            ref: fileProcessor
-#        - log: ${headers}
 #        - choice:
 #            when:
 #              - simple: "${header.fileExtension} == 'jar' || ${header.fileExtension} == 'sh'"
@@ -32,4 +38,3 @@
 #                            - log: success
 #        - to: file:../dsp_if
 #        - log: "전송 후 바디: ${body}"
-        - log: "전송 후 헤더: ${headers}"
