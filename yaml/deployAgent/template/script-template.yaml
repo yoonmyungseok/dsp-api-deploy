@@ -7,7 +7,6 @@
       steps:
         - log: ${headers}
         - log: ${body}
-#        - toD: exec:sh?args=S00001-if-script.sh&workingDir=if
         - toD: exec:sh?args=${header.fileName}&workingDir=${header.agentName}
         - log: ${body}
 #        - unmarshal:

@@ -1899,3 +1899,12 @@ cd ..
 ls -al
 
 echo "Done"
+2023-12-01 17:59:29.117  INFO 2352 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) is shutting down (timeout:45s)
+2023-12-01 17:59:29.145  INFO 2352 --- [Camel (camel-1) thread #3 - ShutdownTask] o.e.jetty.server.AbstractConnector       : Stopped ServerConnector@4be1dce6{HTTP/1.1, (http/1.1)}{localhost:6666}
+2023-12-01 17:59:29.150  INFO 2352 --- [Camel (camel-1) thread #3 - ShutdownTask] o.e.jetty.server.handler.ContextHandler  : Stopped o.e.j.s.ServletContextHandler@6c851821{/,null,STOPPED}
+2023-12-01 17:59:29.157  INFO 2352 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Routes stopped (stopped:3)
+2023-12-01 17:59:29.158  INFO 2352 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped dsp-deploy (jetty:http://localhost:6666/file)
+2023-12-01 17:59:29.158  INFO 2352 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped dsp-if-script (file://if)
+2023-12-01 17:59:29.158  INFO 2352 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped dsp-deploy-script (file://deploy)
+2023-12-01 17:59:29.162  INFO 2352 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) shutdown in 45ms (uptime:1h8m)
+2023-12-01 17:59:29.801  INFO 2352 --- [SpringApplicationShutdownHook] o.a.c.c.s.CamelHttpTransportServlet      : Destroyed CamelHttpTransportServlet[CamelServlet]
