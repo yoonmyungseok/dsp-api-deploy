@@ -9,22 +9,22 @@
       uri: jetty:http://{{httpHost}}/file
       steps:
         - log: ${headers}
-        - setHeader:
-            name: fileExtension
-            simple: ${header.fileExtension}
-        - setHeader:
-            name: fileName
-            simple: ${header.fileName}
-        - setHeader:
-            name: serviceName
-            simple: ${header.serviceName}
-        - setHeader:
-            name: agentName
-            simple: ${header.agentName}
         - choice:
             when:
               - simple: "${header.CamelHttpMethod} == 'POST'"
                 steps:
+                  - setHeader:
+                      name: fileExtension
+                      simple: ${header.fileExtension}
+                  - setHeader:
+                      name: fileName
+                      simple: ${header.fileName}
+                  - setHeader:
+                      name: serviceName
+                      simple: ${header.serviceName}
+                  - setHeader:
+                      name: agentName
+                      simple: ${header.agentName}
                   - toD: file://${header.agentName}?fileName=${header.fileName}
               - simple: "${header.CamelHttpMethod} == 'HEAD'"
                 steps:
