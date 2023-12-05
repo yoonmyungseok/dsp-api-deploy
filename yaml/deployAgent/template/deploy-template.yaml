@@ -1,7 +1,6 @@
 - route-template:
     id: deploy-template
     parameters:
-#      - name: RequestHost
       - name: httpHost
       - name: httpPath
       - name: execPath
@@ -22,5 +21,12 @@
         - setHeader:
             name: agentName
             simple: ${header.agentName}
-        - toD: file://${header.agentName}?fileName=${header.fileName}
+        - choice:
+            when:
+              - simple: "${header.CamelHttpMethod} == 'POST'"
+                steps:
+                  - toD: file://${header.agentName}?fileName=${header.fileName}
+              - simple: "${header.CamelHttpMethod} == 'HEAD'"
+                steps:
+                  - log: 연결 시도
 

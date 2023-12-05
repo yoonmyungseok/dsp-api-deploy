@@ -7,7 +7,11 @@
       steps:
         - log: ${headers}
         - log: ${body}
-        - toD: exec:sh?args=${header.fileName}&workingDir=${header.agentName}
+#        - toD: exec:sh?args=${header.fileName}&workingDir=${header.agentName}
+        - process:
+            ref: scriptProcessor
+        - convertBodyTo:
+            type: String
         - log: ${body}
 #        - unmarshal:
 #            gzipDeflater: {}
