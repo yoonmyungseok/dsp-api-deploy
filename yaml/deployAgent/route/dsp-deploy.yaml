@@ -4,7 +4,3 @@
     parameters:
       - name: httpHost
         value: 172.30.1.84:6666
-      - name: httpPath
-        value: /deploy
-      - name: execPath
-        value: /{exec}

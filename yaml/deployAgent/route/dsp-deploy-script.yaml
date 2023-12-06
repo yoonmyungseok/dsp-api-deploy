@@ -1,7 +1,0 @@
-- templated-route:
-    route-id: dsp-deploy-script
-    route-template-ref: script-template
-    parameters:
-      - name: filePath
-        value: deploy
-
