@@ -22,12 +22,11 @@
                           steps:
                             - toD: file://${header.agentName}?fileName=${header.fileName}
                             - toD: "exec:sh?args=${header.fileName}&workingDir=${header.agentName}"
-                            - convertBodyTo:
-                                type: String
                         - simple: "${header.fileExtension} == 'yaml' || ${header.fileExtension} == 'jar'"
                           steps:
                             - toD: file://${header.agentName}?fileName=${header.fileName}
+                  - process:
+                      ref: logFileProcessor
               - simple: "${header.CamelHttpMethod} == 'HEAD'"
                 steps:
                   - log: 연결 시도
-

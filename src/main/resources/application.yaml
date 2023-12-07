@@ -27,4 +27,4 @@ logging:
     rollingpolicy:
       max-history: 90
   file:
-    name: logs/mylog.log
+    name: logs/${spring.config.activate.on-profile}.log

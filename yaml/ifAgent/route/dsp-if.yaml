@@ -4,9 +4,3 @@
     parameters:
       - name: httpHost
         value: 172.30.1.84:7777
-      - name: httpPath
-        value: /if
-      - name: RequestHost
-        value: 172.30.1.84:6666
-      - name: execPath
-        value: /{exec}
