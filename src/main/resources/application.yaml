@@ -28,3 +28,9 @@ logging:
       max-history: 90
   file:
     name: logs/${spring.config.activate.on-profile}.log
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: health

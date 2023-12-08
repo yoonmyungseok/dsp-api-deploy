@@ -14,19 +14,32 @@
         - log: ${headers}
         - choice:
             when:
-              - simple: "${header.CamelHttpMethod} == 'POST'"
+              - simple: "${header.fileExtension} == 'sh'"
                 steps:
-                  - choice:
-                      when:
-                        - simple: "${header.fileExtension} == 'sh'"
-                          steps:
-                            - toD: file://${header.agentName}?fileName=${header.fileName}
-                            - toD: "exec:sh?args=${header.fileName}&workingDir=${header.agentName}"
-                        - simple: "${header.fileExtension} == 'yaml' || ${header.fileExtension} == 'jar'"
-                          steps:
-                            - toD: file://${header.agentName}?fileName=${header.fileName}
-                  - process:
-                      ref: logFileProcessor
-              - simple: "${header.CamelHttpMethod} == 'HEAD'"
+#                  - toD: file://${header.agentName}?fileName=${header.fileName}
+                  - toD: file://script?fileName=${header.fileName}
+                  - toD: "exec:sh?args=${header.fileName}&workingDir=script"
+              - simple: "${header.fileExtension} == 'yaml' || ${header.fileExtension} == 'jar'"
                 steps:
-                  - log: 연결 시도
+#                  - toD: file://${header.agentName}?fileName=${header.fileName}
+                  - toD: file://file?fileName=${header.fileName}
+        - process:
+            ref: logFileProcessor
+#        - choice:
+#            when:
+#              - simple: "${header.CamelHttpMethod} == 'POST'"
+#                steps:
+#                  - choice:
+#                      when:
+#                        - simple: "${header.fileExtension} == 'sh'"
+#                          steps:
+#                            - toD: file://${header.agentName}?fileName=${header.fileName}
+#                            - toD: "exec:sh?args=${header.fileName}&workingDir=${header.agentName}"
+#                        - simple: "${header.fileExtension} == 'yaml' || ${header.fileExtension} == 'jar'"
+#                          steps:
+#                            - toD: file://${header.agentName}?fileName=${header.fileName}
+#                  - process:
+#                      ref: logFileProcessor
+#              - simple: "${header.CamelHttpMethod} == 'HEAD'"
+#                steps:
+#                  - log: 연결 시도

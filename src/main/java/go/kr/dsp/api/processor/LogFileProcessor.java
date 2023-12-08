@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.Exchange;
-import org.apache.camel.FluentProducerTemplate;
 import org.apache.camel.Processor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -18,7 +17,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 @Slf4j
 public class LogFileProcessor implements Processor {
-  private final FluentProducerTemplate fluentProducerTemplate;
 
   @Value("${spring.config.activate.on-profile}")
   private String logName;
