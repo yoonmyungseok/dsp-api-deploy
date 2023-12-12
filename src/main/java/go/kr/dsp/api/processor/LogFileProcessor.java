@@ -34,7 +34,7 @@ public class LogFileProcessor implements Processor {
     }
     String path = "logs/"+logName+".log";
     String str=Files.readString(Path.of(path));
-
+    map.put("fileSize",exchange.getMessage().getHeader("Content-Length",String.class));
     map.put("logFile",str);
     jsonStr = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(map);
     exchange.getMessage().setBody(jsonStr);

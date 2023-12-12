@@ -2,5 +2,5 @@
     route-id: dsp-deploy
     route-template-ref: deploy-template
     parameters:
-      - name: httpHost
-        value: 172.30.1.84:6666
+      - name: Port
+        value: ":6666"
