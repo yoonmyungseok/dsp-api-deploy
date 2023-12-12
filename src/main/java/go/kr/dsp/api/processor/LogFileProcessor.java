@@ -30,7 +30,7 @@ public class LogFileProcessor implements Processor {
     if(exchange.getMessage().getHeader("fileExtension",String.class).equals("sh")){
       String request = exchange.getMessage().getBody(String.class);
       map.put("request",request);
-      log.info(request);
+      log.info("스크립트 결과:\n {}",request);
     }
     String path = "logs/"+logName+".log";
     String str=Files.readString(Path.of(path));
