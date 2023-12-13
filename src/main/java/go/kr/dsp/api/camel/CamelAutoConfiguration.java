@@ -10,25 +10,26 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 @Configuration
 public class CamelAutoConfiguration {
-
+    
     private final AgentRouteBuilder agentRouteBuilder;
-
+    
     public CamelAutoConfiguration(AgentRouteBuilder agentRouteBuilder) {
         this.agentRouteBuilder = agentRouteBuilder;
     }
+    
     @Bean
     CamelContextConfiguration contextConfiguration() throws Exception {
         return new CamelContextConfiguration() {
             @Override
             public void beforeApplicationStart(CamelContext camelContext) {
-              System.setProperty("route.from",agentRouteBuilder.build());
+                System.setProperty("route.from", agentRouteBuilder.build());
             }
-
+            
             @Override
             public void afterApplicationStart(CamelContext camelContext) {
-
+            
             }
         };
     }
-
+    
 }
