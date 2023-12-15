@@ -53,11 +53,11 @@ public class ScriptProcessor implements Processor {
                 }
             }
             map.put("result", str);
-            log.info("결과 넣음");
+//            log.info("결과 넣음");
             jsonStr = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(map);
-            log.info("문자열로 바꿈");
+//            log.info("문자열로 바꿈");
             exchange.getMessage().setBody(jsonStr);
-            log.info("바디에 넣음");
+//            log.info("바디에 넣음");
             
             int exitCode = process.waitFor();
             log.info("Exited with code " + exitCode);
