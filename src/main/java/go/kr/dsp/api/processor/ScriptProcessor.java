@@ -1,12 +1,14 @@
 package go.kr.dsp.api.processor;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.netty.handler.timeout.ReadTimeoutException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
@@ -44,10 +46,10 @@ public class ScriptProcessor implements Processor {
             StringBuilder str = new StringBuilder();
             
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
-                String line;
+                String line="";
                 while ((line = reader.readLine()) != null) {
-                    log.info(line);
                     str.append(line).append("\n");
+                    log.info(line);
                 }
             }
             map.put("result", str);
@@ -59,7 +61,7 @@ public class ScriptProcessor implements Processor {
             
             int exitCode = process.waitFor();
             log.info("Exited with code " + exitCode);
-        } catch (IOException e) {
+        } catch (Exception e) {
             log.info(e.getMessage());
         }
     }

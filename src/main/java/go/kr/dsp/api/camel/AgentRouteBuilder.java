@@ -17,9 +17,9 @@ public class AgentRouteBuilder {
         String hostAddr = "";
         
         try {
-            Enumeration<NetworkInterface> nienum = NetworkInterface.getNetworkInterfaces();
-            while (nienum.hasMoreElements()) {
-                NetworkInterface ni = nienum.nextElement();
+            Enumeration<NetworkInterface> eni = NetworkInterface.getNetworkInterfaces();
+            while (eni.hasMoreElements()) {
+                NetworkInterface ni = eni.nextElement();
                 Enumeration<InetAddress> kk = ni.getInetAddresses();
                 while (kk.hasMoreElements()) {
                     InetAddress inetAddress = kk.nextElement();

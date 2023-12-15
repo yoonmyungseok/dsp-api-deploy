@@ -5,12 +5,12 @@
     from:
       uri: jetty:http://{{route.from}}{{Port}}/file
       steps:
-#        - onException:
-#            handled:
-#              constant: true
-#            exception: java.lang.Exception
-#            steps:
-#              - log: ${exception.message}
+        - onException:
+            handled:
+              constant: true
+            exception: java.lang.Exception
+            steps:
+              - log: ${exception.message}
         - log: ${headers}
         - choice:
             when:
@@ -19,8 +19,6 @@
                   - toD: file://script?fileName=${header.fileName}&fileExist=Move&moveExisting=backup/${file:name}.bak
                   - process:
                       ref: scriptProcessor
-                  - delay:
-                      constant: 5000
               - simple: "${header.fileExtension} == 'yaml' || ${header.fileExtension} == 'jar'"
                 steps:
                   - toD: file://file?fileName=${header.fileName}&fileExist=Move&moveExisting=backup/${file:name}.bak
