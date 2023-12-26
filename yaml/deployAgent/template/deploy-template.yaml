@@ -1,9 +1,10 @@
 - route-template:
     id: deploy-template
     parameters:
-      - name: Port
+      - name: port
     from:
-      uri: jetty:http://{{route.from}}{{Port}}/file
+      uri: jetty:http://{{route.from}}:{{port}}/file
+#      uri: jetty:https://{{route.from}}:{{port}}/file
       steps:
         - onException:
             handled:

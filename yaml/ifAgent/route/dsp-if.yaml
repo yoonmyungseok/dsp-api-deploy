@@ -2,5 +2,5 @@
     route-id: dsp-if
     route-template-ref: if-template
     parameters:
-      - name: Port
-        value: ":7777"
+      - name: port
+        value: 7777

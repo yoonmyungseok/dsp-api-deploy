@@ -1,0 +1,173 @@
+2023-12-26 14:44:21.155  INFO 26136 --- [main] go.kr.dsp.api.DspApiApplication          : Starting DspApiApplication using Java 11.0.20 on yoonms0623 with PID 26136 (C:\dsp\dsp-api-deploy\build\classes\java\main started by yoonms0623 in C:\dsp\dsp-api-deploy)
+2023-12-26 14:44:21.157  INFO 26136 --- [main] go.kr.dsp.api.DspApiApplication          : The following 1 profile is active: "deploy"
+2023-12-26 14:44:22.043  INFO 26136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7878 (http)
+2023-12-26 14:44:22.049  INFO 26136 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-26 14:44:22.049  INFO 26136 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-12-26 14:44:22.155  INFO 26136 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-26 14:44:22.155  INFO 26136 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 976 ms
+2023-12-26 14:44:22.922  INFO 26136 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-12-26 14:44:22.974  INFO 26136 --- [main] o.a.c.c.s.CamelHttpTransportServlet      : Initialized CamelHttpTransportServlet[name=CamelServlet, contextPath=]
+2023-12-26 14:44:22.975  INFO 26136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7878 (http) with context path ''
+2023-12-26 14:44:23.773  INFO 26136 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) is starting
+2023-12-26 14:44:23.800  INFO 26136 --- [main] org.eclipse.jetty.util.log               : Logging initialized @4133ms to org.eclipse.jetty.util.log.Slf4jLog
+2023-12-26 14:44:23.845  INFO 26136 --- [main] org.eclipse.jetty.server.Server          : jetty-9.4.50.v20221201; built: 2022-12-01T22:07:03.915Z; git: da9a0b30691a45daf90a9f17b5defa2f1434f882; jvm 11.0.20+8
+2023-12-26 14:44:23.880  INFO 26136 --- [main] o.e.jetty.server.handler.ContextHandler  : Started o.e.j.s.ServletContextHandler@20db19ff{/,null,AVAILABLE}
+2023-12-26 14:44:23.892  INFO 26136 --- [main] o.e.jetty.server.AbstractConnector       : Started ServerConnector@1826475{HTTP/1.1, (http/1.1)}{172.27.64.1:6666}
+2023-12-26 14:44:23.892  INFO 26136 --- [main] org.eclipse.jetty.server.Server          : Started @4226ms
+2023-12-26 14:44:23.899  INFO 26136 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup (started:1)
+2023-12-26 14:44:23.899  INFO 26136 --- [main] o.a.c.impl.engine.AbstractCamelContext   :     Started dsp-deploy (jetty:http://172.27.64.1:6666/file)
+2023-12-26 14:44:23.899  INFO 26136 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) started in 327ms (build:36ms init:165ms start:126ms)
+2023-12-26 14:44:23.903  INFO 26136 --- [main] go.kr.dsp.api.DspApiApplication          : Started DspApiApplication in 2.99 seconds (JVM running for 4.237)
+2023-12-26 14:44:25.549  INFO 26136 --- [RMI TCP Connection(3)-172.30.1.14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-26 14:44:25.550  INFO 26136 --- [RMI TCP Connection(3)-172.30.1.14] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-26 14:44:25.552  INFO 26136 --- [RMI TCP Connection(3)-172.30.1.14] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-26 14:48:32.041  INFO 26136 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) is shutting down (timeout:45s)
+2023-12-26 14:48:32.066  INFO 26136 --- [Camel (camel-1) thread #1 - ShutdownTask] o.e.jetty.server.AbstractConnector       : Stopped ServerConnector@1826475{HTTP/1.1, (http/1.1)}{172.27.64.1:6666}
+2023-12-26 14:48:32.071  INFO 26136 --- [Camel (camel-1) thread #1 - ShutdownTask] o.e.jetty.server.handler.ContextHandler  : Stopped o.e.j.s.ServletContextHandler@20db19ff{/,null,STOPPED}
+2023-12-26 14:48:32.075  INFO 26136 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Routes stopped (stopped:1)
+2023-12-26 14:48:32.075  INFO 26136 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped dsp-deploy (jetty:http://172.27.64.1:6666/file)
+2023-12-26 14:48:32.078  INFO 26136 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) shutdown in 36ms (uptime:4m8s)
+2023-12-26 14:48:32.618  INFO 26136 --- [SpringApplicationShutdownHook] o.a.c.c.s.CamelHttpTransportServlet      : Destroyed CamelHttpTransportServlet[CamelServlet]
+2023-12-26 14:48:36.811  INFO 12572 --- [main] go.kr.dsp.api.DspApiApplication          : Starting DspApiApplication using Java 11.0.20 on yoonms0623 with PID 12572 (C:\dsp\dsp-api-deploy\build\classes\java\main started by yoonms0623 in C:\dsp\dsp-api-deploy)
+2023-12-26 14:48:36.813  INFO 12572 --- [main] go.kr.dsp.api.DspApiApplication          : The following 1 profile is active: "deploy"
+2023-12-26 14:48:37.743  INFO 12572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7878 (http)
+2023-12-26 14:48:37.749  INFO 12572 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-26 14:48:37.749  INFO 12572 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-12-26 14:48:37.847  INFO 12572 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-26 14:48:37.848  INFO 12572 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1002 ms
+2023-12-26 14:48:38.654  INFO 12572 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-12-26 14:48:38.706  INFO 12572 --- [main] o.a.c.c.s.CamelHttpTransportServlet      : Initialized CamelHttpTransportServlet[name=CamelServlet, contextPath=]
+2023-12-26 14:48:38.707  INFO 12572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7878 (http) with context path ''
+2023-12-26 14:48:39.559  INFO 12572 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) is starting
+2023-12-26 14:48:39.583  INFO 12572 --- [main] org.eclipse.jetty.util.log               : Logging initialized @4116ms to org.eclipse.jetty.util.log.Slf4jLog
+2023-12-26 14:48:39.619  INFO 12572 --- [main] org.eclipse.jetty.server.Server          : jetty-9.4.50.v20221201; built: 2022-12-01T22:07:03.915Z; git: da9a0b30691a45daf90a9f17b5defa2f1434f882; jvm 11.0.20+8
+2023-12-26 14:48:39.650  INFO 12572 --- [main] o.e.jetty.server.handler.ContextHandler  : Started o.e.j.s.ServletContextHandler@6fe243a{/,null,AVAILABLE}
+2023-12-26 14:48:39.660  INFO 12572 --- [main] o.e.jetty.server.AbstractConnector       : Started ServerConnector@6b52a40{HTTP/1.1, (http/1.1)}{172.27.64.1:6666}
+2023-12-26 14:48:39.660  INFO 12572 --- [main] org.eclipse.jetty.server.Server          : Started @4193ms
+2023-12-26 14:48:39.667  INFO 12572 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup (started:1)
+2023-12-26 14:48:39.667  INFO 12572 --- [main] o.a.c.impl.engine.AbstractCamelContext   :     Started dsp-deploy (jetty:http://172.27.64.1:6666/file)
+2023-12-26 14:48:39.667  INFO 12572 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) started in 299ms (build:40ms init:151ms start:108ms)
+2023-12-26 14:48:39.672  INFO 12572 --- [main] go.kr.dsp.api.DspApiApplication          : Started DspApiApplication in 3.124 seconds (JVM running for 4.204)
+2023-12-26 14:48:40.722  INFO 12572 --- [RMI TCP Connection(1)-172.30.1.14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-26 14:48:40.723  INFO 12572 --- [RMI TCP Connection(1)-172.30.1.14] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-26 14:48:40.725  INFO 12572 --- [RMI TCP Connection(1)-172.30.1.14] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-12-26 14:48:46.383  INFO 12572 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) is shutting down (timeout:45s)
+2023-12-26 14:48:46.410  INFO 12572 --- [Camel (camel-1) thread #1 - ShutdownTask] o.e.jetty.server.AbstractConnector       : Stopped ServerConnector@6b52a40{HTTP/1.1, (http/1.1)}{172.27.64.1:6666}
+2023-12-26 14:48:46.412  INFO 12572 --- [Camel (camel-1) thread #1 - ShutdownTask] o.e.jetty.server.handler.ContextHandler  : Stopped o.e.j.s.ServletContextHandler@6fe243a{/,null,STOPPED}
+2023-12-26 14:48:46.418  INFO 12572 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Routes stopped (stopped:1)
+2023-12-26 14:48:46.418  INFO 12572 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped dsp-deploy (jetty:http://172.27.64.1:6666/file)
+2023-12-26 14:48:46.422  INFO 12572 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) shutdown in 39ms (uptime:6s)
+2023-12-26 14:48:46.976  INFO 12572 --- [SpringApplicationShutdownHook] o.a.c.c.s.CamelHttpTransportServlet      : Destroyed CamelHttpTransportServlet[CamelServlet]
+2023-12-26 14:49:03.601  INFO 34012 --- [main] go.kr.dsp.api.DspApiApplication          : Starting DspApiApplication using Java 11.0.20 on yoonms0623 with PID 34012 (C:\dsp\dsp-api-deploy\build\classes\java\main started by yoonms0623 in C:\dsp\dsp-api-deploy)
+2023-12-26 14:49:03.603  INFO 34012 --- [main] go.kr.dsp.api.DspApiApplication          : The following 1 profile is active: "deploy"
+2023-12-26 14:49:04.470  INFO 34012 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7878 (http)
+2023-12-26 14:49:04.476  INFO 34012 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-26 14:49:04.477  INFO 34012 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-12-26 14:49:04.581  INFO 34012 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-26 14:49:04.582  INFO 34012 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 955 ms
+2023-12-26 14:49:05.384  INFO 34012 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-12-26 14:49:05.433  INFO 34012 --- [main] o.a.c.c.s.CamelHttpTransportServlet      : Initialized CamelHttpTransportServlet[name=CamelServlet, contextPath=]
+2023-12-26 14:49:05.434  INFO 34012 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7878 (http) with context path ''
+2023-12-26 14:49:06.196  INFO 34012 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) is starting
+2023-12-26 14:49:06.218  INFO 34012 --- [main] org.eclipse.jetty.util.log               : Logging initialized @3989ms to org.eclipse.jetty.util.log.Slf4jLog
+2023-12-26 14:49:06.248  INFO 34012 --- [main] org.eclipse.jetty.server.Server          : jetty-9.4.50.v20221201; built: 2022-12-01T22:07:03.915Z; git: da9a0b30691a45daf90a9f17b5defa2f1434f882; jvm 11.0.20+8
+2023-12-26 14:49:06.267  INFO 34012 --- [main] o.e.jetty.server.handler.ContextHandler  : Started o.e.j.s.ServletContextHandler@18c60d81{/,null,AVAILABLE}
+2023-12-26 14:49:06.279  INFO 34012 --- [main] o.e.jetty.server.AbstractConnector       : Started ServerConnector@6b15e68c{HTTP/1.1, (http/1.1)}{172.27.64.1:6666}
+2023-12-26 14:49:06.280  INFO 34012 --- [main] org.eclipse.jetty.server.Server          : Started @4051ms
+2023-12-26 14:49:06.288  INFO 34012 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup (started:1)
+2023-12-26 14:49:06.288  INFO 34012 --- [main] o.a.c.impl.engine.AbstractCamelContext   :     Started dsp-deploy (jetty:http://172.27.64.1:6666/file)
+2023-12-26 14:49:06.288  INFO 34012 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) started in 261ms (build:38ms init:132ms start:91ms)
+2023-12-26 14:49:06.292  INFO 34012 --- [main] go.kr.dsp.api.DspApiApplication          : Started DspApiApplication in 2.951 seconds (JVM running for 4.063)
+2023-12-26 14:49:07.511  INFO 34012 --- [RMI TCP Connection(3)-172.30.1.14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-26 14:49:07.513  INFO 34012 --- [RMI TCP Connection(3)-172.30.1.14] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-26 14:49:07.514  INFO 34012 --- [RMI TCP Connection(3)-172.30.1.14] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-26 14:49:11.329  INFO 34012 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) is shutting down (timeout:45s)
+2023-12-26 14:49:11.341  INFO 34012 --- [Camel (camel-1) thread #1 - ShutdownTask] o.e.jetty.server.AbstractConnector       : Stopped ServerConnector@6b15e68c{HTTP/1.1, (http/1.1)}{172.27.64.1:6666}
+2023-12-26 14:49:11.343  INFO 34012 --- [Camel (camel-1) thread #1 - ShutdownTask] o.e.jetty.server.handler.ContextHandler  : Stopped o.e.j.s.ServletContextHandler@18c60d81{/,null,STOPPED}
+2023-12-26 14:49:11.348  INFO 34012 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Routes stopped (stopped:1)
+2023-12-26 14:49:11.348  INFO 34012 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped dsp-deploy (jetty:http://172.27.64.1:6666/file)
+2023-12-26 14:49:11.351  INFO 34012 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) shutdown in 21ms (uptime:5s)
+2023-12-26 14:49:11.887  INFO 34012 --- [SpringApplicationShutdownHook] o.a.c.c.s.CamelHttpTransportServlet      : Destroyed CamelHttpTransportServlet[CamelServlet]
+2023-12-26 14:49:15.623  INFO 9396 --- [main] go.kr.dsp.api.DspApiApplication          : Starting DspApiApplication using Java 11.0.20 on yoonms0623 with PID 9396 (C:\dsp\dsp-api-deploy\build\classes\java\main started by yoonms0623 in C:\dsp\dsp-api-deploy)
+2023-12-26 14:49:15.626  INFO 9396 --- [main] go.kr.dsp.api.DspApiApplication          : The following 1 profile is active: "deploy"
+2023-12-26 14:49:16.544  INFO 9396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7878 (http)
+2023-12-26 14:49:16.551  INFO 9396 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-26 14:49:16.551  INFO 9396 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-12-26 14:49:16.646  INFO 9396 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-26 14:49:16.646  INFO 9396 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 995 ms
+2023-12-26 14:49:17.403  INFO 9396 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-12-26 14:49:17.462  INFO 9396 --- [main] o.a.c.c.s.CamelHttpTransportServlet      : Initialized CamelHttpTransportServlet[name=CamelServlet, contextPath=]
+2023-12-26 14:49:17.463  INFO 9396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7878 (http) with context path ''
+2023-12-26 14:49:18.221  INFO 9396 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) is starting
+2023-12-26 14:49:18.250  INFO 9396 --- [main] org.eclipse.jetty.util.log               : Logging initialized @3946ms to org.eclipse.jetty.util.log.Slf4jLog
+2023-12-26 14:49:18.286  INFO 9396 --- [main] org.eclipse.jetty.server.Server          : jetty-9.4.50.v20221201; built: 2022-12-01T22:07:03.915Z; git: da9a0b30691a45daf90a9f17b5defa2f1434f882; jvm 11.0.20+8
+2023-12-26 14:49:18.303  INFO 9396 --- [main] o.e.jetty.server.handler.ContextHandler  : Started o.e.j.s.ServletContextHandler@6fe243a{/,null,AVAILABLE}
+2023-12-26 14:49:18.316  INFO 9396 --- [main] o.e.jetty.server.AbstractConnector       : Started ServerConnector@6b52a40{HTTP/1.1, (http/1.1)}{172.27.64.1:6666}
+2023-12-26 14:49:18.329  INFO 9396 --- [main] org.eclipse.jetty.server.Server          : Started @4024ms
+2023-12-26 14:49:18.339  INFO 9396 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup (started:1)
+2023-12-26 14:49:18.340  INFO 9396 --- [main] o.a.c.impl.engine.AbstractCamelContext   :     Started dsp-deploy (jetty:http://172.27.64.1:6666/file)
+2023-12-26 14:49:18.340  INFO 9396 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) started in 300ms (build:37ms init:146ms start:117ms)
+2023-12-26 14:49:18.344  INFO 9396 --- [main] go.kr.dsp.api.DspApiApplication          : Started DspApiApplication in 2.974 seconds (JVM running for 4.039)
+2023-12-26 14:49:19.008  INFO 9396 --- [RMI TCP Connection(2)-172.30.1.14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-26 14:49:19.008  INFO 9396 --- [RMI TCP Connection(2)-172.30.1.14] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-26 14:49:19.011  INFO 9396 --- [RMI TCP Connection(2)-172.30.1.14] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-12-26 14:53:14.029  INFO 9396 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) is shutting down (timeout:45s)
+2023-12-26 14:53:14.055  INFO 9396 --- [Camel (camel-1) thread #1 - ShutdownTask] o.e.jetty.server.AbstractConnector       : Stopped ServerConnector@6b52a40{HTTP/1.1, (http/1.1)}{172.27.64.1:6666}
+2023-12-26 14:53:14.058  INFO 9396 --- [Camel (camel-1) thread #1 - ShutdownTask] o.e.jetty.server.handler.ContextHandler  : Stopped o.e.j.s.ServletContextHandler@6fe243a{/,null,STOPPED}
+2023-12-26 14:53:14.065  INFO 9396 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Routes stopped (stopped:1)
+2023-12-26 14:53:14.065  INFO 9396 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped dsp-deploy (jetty:http://172.27.64.1:6666/file)
+2023-12-26 14:53:14.069  INFO 9396 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) shutdown in 39ms (uptime:3m55s)
+2023-12-26 14:53:14.643  INFO 9396 --- [SpringApplicationShutdownHook] o.a.c.c.s.CamelHttpTransportServlet      : Destroyed CamelHttpTransportServlet[CamelServlet]
+2023-12-26 14:53:19.555  INFO 3420 --- [main] go.kr.dsp.api.DspApiApplication          : Starting DspApiApplication using Java 11.0.20 on yoonms0623 with PID 3420 (C:\dsp\dsp-api-deploy\build\classes\java\main started by yoonms0623 in C:\dsp\dsp-api-deploy)
+2023-12-26 14:53:19.557  INFO 3420 --- [main] go.kr.dsp.api.DspApiApplication          : The following 1 profile is active: "deploy"
+2023-12-26 14:53:20.428  INFO 3420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7878 (http)
+2023-12-26 14:53:20.434  INFO 3420 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-26 14:53:20.435  INFO 3420 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-12-26 14:53:20.540  INFO 3420 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-26 14:53:20.540  INFO 3420 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 961 ms
+2023-12-26 14:53:21.351  INFO 3420 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-12-26 14:53:21.400  INFO 3420 --- [main] o.a.c.c.s.CamelHttpTransportServlet      : Initialized CamelHttpTransportServlet[name=CamelServlet, contextPath=]
+2023-12-26 14:53:21.401  INFO 3420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7878 (http) with context path ''
+2023-12-26 14:53:22.179  INFO 3420 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) is starting
+2023-12-26 14:53:22.201  INFO 3420 --- [main] org.eclipse.jetty.util.log               : Logging initialized @4021ms to org.eclipse.jetty.util.log.Slf4jLog
+2023-12-26 14:53:22.234  INFO 3420 --- [main] org.eclipse.jetty.server.Server          : jetty-9.4.50.v20221201; built: 2022-12-01T22:07:03.915Z; git: da9a0b30691a45daf90a9f17b5defa2f1434f882; jvm 11.0.20+8
+2023-12-26 14:53:22.253  INFO 3420 --- [main] o.e.jetty.server.handler.ContextHandler  : Started o.e.j.s.ServletContextHandler@266a47fd{/,null,AVAILABLE}
+2023-12-26 14:53:22.264  INFO 3420 --- [main] o.e.jetty.server.AbstractConnector       : Started ServerConnector@6d4d0a14{HTTP/1.1, (http/1.1)}{172.27.64.1:80}
+2023-12-26 14:53:22.264  INFO 3420 --- [main] org.eclipse.jetty.server.Server          : Started @4085ms
+2023-12-26 14:53:22.273  INFO 3420 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup (started:1)
+2023-12-26 14:53:22.273  INFO 3420 --- [main] o.a.c.impl.engine.AbstractCamelContext   :     Started dsp-deploy (jetty:http://172.27.64.1/file)
+2023-12-26 14:53:22.273  INFO 3420 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) started in 271ms (build:39ms init:139ms start:93ms)
+2023-12-26 14:53:22.278  INFO 3420 --- [main] go.kr.dsp.api.DspApiApplication          : Started DspApiApplication in 2.975 seconds (JVM running for 4.097)
+2023-12-26 14:53:23.472  INFO 3420 --- [RMI TCP Connection(3)-172.30.1.14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-26 14:53:23.474  INFO 3420 --- [RMI TCP Connection(3)-172.30.1.14] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-26 14:53:23.475  INFO 3420 --- [RMI TCP Connection(3)-172.30.1.14] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-26 15:04:51.201  INFO 3420 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) is shutting down (timeout:45s)
+2023-12-26 15:04:51.223  INFO 3420 --- [Camel (camel-1) thread #1 - ShutdownTask] o.e.jetty.server.AbstractConnector       : Stopped ServerConnector@6d4d0a14{HTTP/1.1, (http/1.1)}{172.27.64.1:80}
+2023-12-26 15:04:51.226  INFO 3420 --- [Camel (camel-1) thread #1 - ShutdownTask] o.e.jetty.server.handler.ContextHandler  : Stopped o.e.j.s.ServletContextHandler@266a47fd{/,null,STOPPED}
+2023-12-26 15:04:51.232  INFO 3420 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Routes stopped (stopped:1)
+2023-12-26 15:04:51.232  INFO 3420 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   :     Stopped dsp-deploy (jetty:http://172.27.64.1/file)
+2023-12-26 15:04:51.237  INFO 3420 --- [SpringApplicationShutdownHook] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) shutdown in 35ms (uptime:11m29s)
+2023-12-26 15:04:51.832  INFO 3420 --- [SpringApplicationShutdownHook] o.a.c.c.s.CamelHttpTransportServlet      : Destroyed CamelHttpTransportServlet[CamelServlet]
+2023-12-26 15:04:56.549  INFO 31536 --- [main] go.kr.dsp.api.DspApiApplication          : Starting DspApiApplication using Java 11.0.20 on yoonms0623 with PID 31536 (C:\dsp\dsp-api-deploy\build\classes\java\main started by yoonms0623 in C:\dsp\dsp-api-deploy)
+2023-12-26 15:04:56.551  INFO 31536 --- [main] go.kr.dsp.api.DspApiApplication          : The following 1 profile is active: "deploy"
+2023-12-26 15:04:57.458  INFO 31536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7878 (http)
+2023-12-26 15:04:57.463  INFO 31536 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-26 15:04:57.464  INFO 31536 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-12-26 15:04:57.561  INFO 31536 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-26 15:04:57.561  INFO 31536 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 985 ms
+2023-12-26 15:04:58.317  INFO 31536 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-12-26 15:04:58.372  INFO 31536 --- [main] o.a.c.c.s.CamelHttpTransportServlet      : Initialized CamelHttpTransportServlet[name=CamelServlet, contextPath=]
+2023-12-26 15:04:58.372  INFO 31536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7878 (http) with context path ''
+2023-12-26 15:04:59.129  INFO 31536 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) is starting
+2023-12-26 15:04:59.153  INFO 31536 --- [main] org.eclipse.jetty.util.log               : Logging initialized @3953ms to org.eclipse.jetty.util.log.Slf4jLog
+2023-12-26 15:04:59.188  INFO 31536 --- [main] org.eclipse.jetty.server.Server          : jetty-9.4.50.v20221201; built: 2022-12-01T22:07:03.915Z; git: da9a0b30691a45daf90a9f17b5defa2f1434f882; jvm 11.0.20+8
+2023-12-26 15:04:59.208  INFO 31536 --- [main] o.e.jetty.server.handler.ContextHandler  : Started o.e.j.s.ServletContextHandler@7057dbda{/,null,AVAILABLE}
+2023-12-26 15:04:59.220  INFO 31536 --- [main] o.e.jetty.server.AbstractConnector       : Started ServerConnector@389bc2d3{HTTP/1.1, (http/1.1)}{0.0.0.0:80}
+2023-12-26 15:04:59.220  INFO 31536 --- [main] org.eclipse.jetty.server.Server          : Started @4020ms
+2023-12-26 15:04:59.229  INFO 31536 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup (started:1)
+2023-12-26 15:04:59.229  INFO 31536 --- [main] o.a.c.impl.engine.AbstractCamelContext   :     Started dsp-deploy (jetty:http://172.27.64.110023/file)
+2023-12-26 15:04:59.230  INFO 31536 --- [main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 3.20.0 (camel-1) started in 279ms (build:36ms init:143ms start:100ms)
+2023-12-26 15:04:59.235  INFO 31536 --- [main] go.kr.dsp.api.DspApiApplication          : Started DspApiApplication in 2.937 seconds (JVM running for 4.035)
+2023-12-26 15:04:59.946  INFO 31536 --- [RMI TCP Connection(1)-172.30.1.14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-26 15:04:59.948  INFO 31536 --- [RMI TCP Connection(1)-172.30.1.14] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-26 15:04:59.950  INFO 31536 --- [RMI TCP Connection(1)-172.30.1.14] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

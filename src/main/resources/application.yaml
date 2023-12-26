@@ -22,15 +22,10 @@ camel:
 logging:
   level:
     root: info
-    org.apache.kafka.clients.consumer.ConsumerConfig: warn
+#    org.apache.kafka.clients.consumer.ConsumerConfig: warn
   logback:
     rollingpolicy:
       max-history: 90
   file:
     name: logs/${spring.config.activate.on-profile}.log
 
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: health

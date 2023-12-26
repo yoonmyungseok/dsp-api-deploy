@@ -2,5 +2,5 @@
     route-id: dsp-deploy
     route-template-ref: deploy-template
     parameters:
-      - name: Port
-        value: ":6666"
+      - name: port
+        value: 9085

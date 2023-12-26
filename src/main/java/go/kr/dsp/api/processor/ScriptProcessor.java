@@ -1,15 +1,12 @@
 package go.kr.dsp.api.processor;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.netty.handler.timeout.ReadTimeoutException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
-import java.io.EOFException;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
