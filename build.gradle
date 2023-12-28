@@ -24,19 +24,19 @@ dependencies {
     implementation 'org.apache.camel.springboot:camel-spring-boot-starter'
     implementation 'org.apache.camel:camel-endpointdsl'
     implementation 'org.apache.camel:camel-yaml-dsl'
-    implementation 'org.apache.camel.springboot:camel-kafka-starter'
-    implementation 'org.springframework.kafka:spring-kafka'
-    implementation 'org.apache.camel.springboot:camel-jackson-starter'
+//    implementation 'org.apache.camel.springboot:camel-kafka-starter'
+//    implementation 'org.springframework.kafka:spring-kafka'
+//    implementation 'org.apache.camel.springboot:camel-jackson-starter'
     implementation 'org.apache.camel.springboot:camel-jetty-starter'
-    implementation 'org.apache.camel.springboot:camel-servlet-starter'
-    implementation 'org.apache.camel.springboot:camel-rest-starter'
-    implementation 'org.apache.camel.springboot:camel-opentelemetry-starter'
-    implementation 'org.apache.camel.springboot:camel-opentracing-starter'
-    implementation 'io.opentracing.contrib:opentracing-spring-jaeger-starter:3.3.1'
+//    implementation 'org.apache.camel.springboot:camel-servlet-starter'
+//    implementation 'org.apache.camel.springboot:camel-rest-starter'
+//    implementation 'org.apache.camel.springboot:camel-opentelemetry-starter'
+//    implementation 'org.apache.camel.springboot:camel-opentracing-starter'
+//    implementation 'io.opentracing.contrib:opentracing-spring-jaeger-starter:3.3.1'
     implementation 'org.apache.camel.springboot:camel-http-starter'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'io.micrometer:micrometer-registry-prometheus'
-    implementation 'org.apache.camel.springboot:camel-vertx-kafka-starter'
+//    implementation 'io.micrometer:micrometer-registry-prometheus'
+//    implementation 'org.apache.camel.springboot:camel-vertx-kafka-starter'
     compileOnly 'org.projectlombok:lombok'
 //    runtimeOnly 'org.postgresql:postgresql'
     runtimeOnly 'javax.servlet:javax.servlet-api'
@@ -51,24 +51,24 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-//task copyToLib(type: Copy) {
-//    into "$buildDir/libs/libs"
-//    from configurations.runtimeClasspath.files
-//}
-//
-//jar {
-//    archiveClassifier = ''
-//    manifest {
-//        attributes 'Main-Class': 'go.kr.dsp.api.DspApiApplication'
-//        attributes 'Class-Path': configurations.runtimeClasspath.files.collect { 'libs/' + it.getName() }.join(' ')
-//    }
-//}
-//
-//bootJar {
-//    enabled = false
-//}
-bootJar{
-    archivesBaseName = 'agent'
-    archiveFileName = 'agent-1.0.0.jar'
-    archiveVersion = "1.0.0"
+task copyToLib(type: Copy) {
+    into "$buildDir/libs/libs"
+    from configurations.runtimeClasspath.files
 }
+
+jar {
+    archiveClassifier = ''
+    manifest {
+        attributes 'Main-Class': 'go.kr.dsp.api.DspApiApplication'
+        attributes 'Class-Path': configurations.runtimeClasspath.files.collect { 'libs/' + it.getName() }.join(' ')
+    }
+}
+
+bootJar {
+    enabled = false
+}
+//bootJar{
+//    archivesBaseName = 'agent'
+//    archiveFileName = 'agent-1.0.0.jar'
+//    archiveVersion = "1.0.0"
+//}

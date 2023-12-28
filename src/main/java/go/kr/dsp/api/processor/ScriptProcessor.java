@@ -25,16 +25,19 @@ public class ScriptProcessor implements Processor {
         ObjectMapper mapper = new ObjectMapper();
         Map<String, Object> map = new HashMap<>();
         
-        log.info(System.getProperty("user.dir"));
+        log.info("디렉토리: {}", System.getProperty("user.dir"));
+        //Body에 담은 스크립트
         String execSh = exchange.getMessage().getBody(String.class);
         map.put("execSh", execSh);
         log.info("실행 스크립트: \n{}", execSh);
+        //실행할 스크립트 경로
         String scriptPath = System.getProperty("user.dir") + "/script/" + exchange.getMessage().getHeader("fileName", String.class);
         
         //파일 권한
         Set<PosixFilePermission> perms = PosixFilePermissions.fromString("rwxrwxrwx");
         Files.setPosixFilePermissions(Paths.get(scriptPath), perms);
         
+        //스크립트 실행 프로세스
         ProcessBuilder processBuilder = new ProcessBuilder(scriptPath);
         processBuilder.redirectErrorStream(true);
         
@@ -43,18 +46,15 @@ public class ScriptProcessor implements Processor {
             StringBuilder str = new StringBuilder();
             
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
-                String line="";
+                String line = "";
                 while ((line = reader.readLine()) != null) {
                     str.append(line).append("\n");
                     log.info(line);
                 }
             }
             map.put("result", str);
-//            log.info("결과 넣음");
             jsonStr = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(map);
-//            log.info("문자열로 바꿈");
             exchange.getMessage().setBody(jsonStr);
-//            log.info("바디에 넣음");
             
             int exitCode = process.waitFor();
             log.info("Exited with code " + exitCode);

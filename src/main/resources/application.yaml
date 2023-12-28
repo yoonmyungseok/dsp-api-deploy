@@ -1,9 +1,9 @@
 spring:
   config:
     activate:
-      on-profile: deploy
+      on-profile: deployAgent
 server:
-  port: 7878
+  port: 10022
 camel:
   springboot:
     routes-include-pattern: file:yaml/deployAgent/**/*.yaml
@@ -11,9 +11,9 @@ camel:
 spring:
   config:
     activate:
-      on-profile: if
+      on-profile: ifAgent
 server:
-  port: 8787
+  port: 9075
 camel:
   springboot:
     routes-include-pattern: file:yaml/ifAgent/**/*.yaml

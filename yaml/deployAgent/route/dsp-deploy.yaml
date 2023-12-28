@@ -3,4 +3,4 @@
     route-template-ref: deploy-template
     parameters:
       - name: port
-        value: 9085
+        value: 10023

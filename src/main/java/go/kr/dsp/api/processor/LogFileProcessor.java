@@ -29,6 +29,7 @@ public class LogFileProcessor implements Processor {
         ObjectMapper mapper = new ObjectMapper();
         Map<String, Object> processResult = new HashMap<>();
         
+        //스크립트 내용, 실행 결과
         if (exchange.getMessage().getHeader("fileExtension", String.class).equals("sh")) {
             Object body = exchange.getMessage().getBody();
             String dataString = "";
@@ -39,11 +40,15 @@ public class LogFileProcessor implements Processor {
             }
             Map map = mapper.readValue(dataString, Map.class);
             
+            String result = map.get("result").toString();
+            //스크립트 내용
             processResult.put("execSh", map.get("execSh").toString());
-            String request = map.get("result").toString();
-            processResult.put("request", request);
-            log.info("스크립트 결과:\n{}", request);
+            //스크립트 결과
+            processResult.put("result", result);
+            log.info("스크립트 결과:\n{}", result);
         }
+        
+        //경로에 있는 로그파일 읽어서 Body로 보냄
         String path = "logs/" + logName + ".log";
         String str = Files.readString(Path.of(path));
         processResult.put("fileSize", exchange.getMessage().getHeader("Content-Length", String.class));
